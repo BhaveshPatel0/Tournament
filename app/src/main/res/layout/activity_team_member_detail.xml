@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.TeamMemberDetailAct"
+    android:orientation="vertical"
+    android:background="@color/offWhite">
+
+    <EditText
+        android:id="@+id/edtMemberName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:gravity="center"
+        android:padding="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginHorizontal="@dimen/_7sdp"
+        android:layout_marginBottom="@dimen/_7sdp"/>
+
+    <EditText
+        android:id="@+id/edtMemberAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Age"
+        android:inputType="number"
+        android:padding="@dimen/_15sdp"
+        android:gravity="center"
+        android:layout_margin="@dimen/_7sdp" />
+    <EditText
+        android:id="@+id/edtMemberType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Type"
+        android:padding="@dimen/_15sdp"
+        android:gravity="center"
+        android:layout_margin="@dimen/_7sdp"/>
+
+    <EditText
+        android:id="@+id/edtMemberBest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Best"
+        android:padding="@dimen/_15sdp"
+        android:gravity="center"
+        android:layout_margin="@dimen/_7sdp"/>
+
+    <Button
+        android:id="@+id/btnAddMember"
+        android:layout_width="@dimen/_57sdp"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/_7sdp"/>
+</LinearLayout>

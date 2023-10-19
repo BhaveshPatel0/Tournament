@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AddTournamentAct"
+    android:orientation="vertical"
+    android:background="@color/offWhite">
+
+    <EditText
+        android:id="@+id/edtTournamentName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:gravity="center"
+        android:textSize="@dimen/_15sdp"
+        android:padding="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_7sdp"/>
+
+    <EditText
+        android:id="@+id/edtTournamentVenue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Venue"
+        android:padding="@dimen/_10sdp"
+        android:gravity="center"
+        android:textSize="@dimen/_15sdp"
+        android:layout_margin="@dimen/_7sdp"/>
+
+    <EditText
+        android:id="@+id/edtTournamentDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Date"
+        android:gravity="center"
+        android:textSize="@dimen/_15sdp"
+        android:padding="@dimen/_10sdp"
+        android:layout_margin="@dimen/_7sdp"/>
+
+    <EditText
+        android:id="@+id/edtTournamentFormat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Format"
+        android:padding="@dimen/_10sdp"
+        android:gravity="center"
+        android:textSize="@dimen/_15sdp"
+        android:layout_margin="@dimen/_7sdp"/>
+
+    <EditText
+        android:id="@+id/edtBallType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ball Type"
+        android:padding="@dimen/_10sdp"
+        android:gravity="center"
+        android:textSize="@dimen/_15sdp"
+        android:layout_margin="@dimen/_7sdp"/>
+
+    <EditText
+        android:id="@+id/edtWicketType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Wicket Type"
+        android:padding="@dimen/_10sdp"
+        android:gravity="center"
+        android:textSize="@dimen/_15sdp"
+        android:layout_margin="@dimen/_7sdp"/>
+
+
+    <Button
+        android:id="@+id/btnOK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:textSize="@dimen/_15sdp"
+        android:layout_gravity="center"
+        android:padding="@dimen/_15sdp"
+        android:layout_margin="@dimen/_7sdp" />
+
+</LinearLayout>
