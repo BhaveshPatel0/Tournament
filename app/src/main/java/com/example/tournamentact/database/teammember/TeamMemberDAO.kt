@@ -19,6 +19,7 @@ interface TeamMemberDAO {
     @Delete
     fun deleteTeamMember(dataTeamMember: DataTeamMember)
 
+
     @Query("SELECT * FROM DataTeamMember where teamMemberID=:memberId")
     fun getAllData(memberId:Int):List<DataTeamMember>
 }

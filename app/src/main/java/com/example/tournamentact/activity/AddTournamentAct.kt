@@ -10,7 +10,8 @@ import com.example.tournamentact.R
 import com.example.tournamentact.database.tournament.DataTournamentDetail
 import com.example.tournamentact.database.tournament.TournamentDataBase
 
-class AddTournamentAct : AppCompatActivity() {
+class
+AddTournamentAct : AppCompatActivity() {
     private lateinit var edtTournamentName: EditText
     private lateinit var edtTournamentVenue: EditText
     private lateinit var edtTournamentDate: EditText

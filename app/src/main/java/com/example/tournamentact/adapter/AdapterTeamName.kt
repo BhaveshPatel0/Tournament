@@ -24,6 +24,7 @@ class AdapterTeamName(val reqContext: Context, val listOfTeamName: List<DataTeam
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
         HolderTeamName(
             LayoutInflater.from(reqContext).inflate(R.layout.item_rcv_team_name, parent, false)
+
         )
 
     override fun getItemCount(): Int {
@@ -32,7 +33,6 @@ class AdapterTeamName(val reqContext: Context, val listOfTeamName: List<DataTeam
 
     override fun onBindViewHolder(holder: HolderTeamName, position: Int) {
         val list = listOfTeamName[position]
-
         holder.tvTeamName.text = list.teamName
         holder.tvTeamName1.text = list.teamName
         holder.llTeamName.setOnClickListener {

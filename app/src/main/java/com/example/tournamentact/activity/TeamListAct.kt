@@ -1,4 +1,5 @@
 package com.example.tournamentact.activity
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -14,6 +15,7 @@ import androidx.room.Room
 import com.example.tournamentact.R
 import com.example.tournamentact.adapter.AdapterTeamName
 import com.example.tournamentact.database.teamname.TeamNameDataBase
+
 class TeamListAct : AppCompatActivity() {
     private lateinit var ivAddTeam: ImageView
     private lateinit var tvNoTeamAdded: TextView
@@ -30,6 +32,7 @@ class TeamListAct : AppCompatActivity() {
         bindView()
         bindClick()
     }
+
     private fun bindView() {
         ivAddTeam = findViewById(R.id.ivAddTeam)
         btnAddMatch = findViewById(R.id.btnAddMatch)
@@ -39,6 +42,7 @@ class TeamListAct : AppCompatActivity() {
             Room.databaseBuilder(applicationContext, TeamNameDataBase::class.java, "TeamNameDB")
                 .build()
     }
+
     private fun bindClick() {
         ivAddTeam.setOnClickListener {
             startActivity(
@@ -47,9 +51,15 @@ class TeamListAct : AppCompatActivity() {
             )
         }
         btnAddMatch.setOnClickListener {
-            startActivity(Intent(this,SelectMatchTeamAct::class.java))
+            startActivity(
+                Intent(
+                    this,
+                    SelectMatchTeamAct::class.java
+                ).putExtra("selectedTournament", selectedTournament)
+            )
         }
     }
+
     override fun onResume() {
         super.onResume()
         Thread {

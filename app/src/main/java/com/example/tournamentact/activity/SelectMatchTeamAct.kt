@@ -2,7 +2,9 @@ package com.example.tournamentact.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
 import com.example.tournamentact.R
@@ -15,26 +17,35 @@ class SelectMatchTeamAct : AppCompatActivity() {
     private lateinit var btnOk: Button
     private lateinit var database: TeamNameDataBase
     private lateinit var mAdapterTeamName: AdapterTeamName
+
+    var selectTeam=0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_select_match_team)
+        selectTeam=intent.extras?.getInt("selectTeamName")!!
         bindView()
         bindClick()
     }
-
     private fun bindView() {
         rcvSelectTeam = findViewById(R.id.rcvSelectTeam)
         btnOk = findViewById(R.id.btnOk)
-
         database =
             Room.databaseBuilder(applicationContext, TeamNameDataBase::class.java, "TeamNameDB")
                 .build()
+        Thread {
+            val teamList = database.TeamNameDAO().getAllData(selectTeam)
+            //Log.d(TAG, "onResume: $teamList")
+            runOnUiThread {
+                mAdapterTeamName = AdapterTeamName(this, teamList)
 
-
+                rcvSelectTeam.apply {
+                    layoutManager = GridLayoutManager(this@SelectMatchTeamAct, 3)
+                    adapter = mAdapterTeamName
+                }
+            }
+        }.start()
     }
-
     private fun bindClick() {
-
 
     }
 }

@@ -31,11 +31,9 @@ class AdapterTournamentDetail(
             LayoutInflater.from(reqContext)
                 .inflate(R.layout.item_rcv_tourament_detail, parent, false)
         )
-
     override fun getItemCount(): Int {
         return listOfDetail.size
     }
-
     override fun onBindViewHolder(holder: HolderTournamentDetail, position: Int) {
         val list = listOfDetail[position]
 
@@ -44,15 +42,12 @@ class AdapterTournamentDetail(
         holder.tvDate.text = list.date
         holder.tvFormat.text = list.format
         holder.llTournamentList.setOnClickListener {
-
             reqContext.startActivity(
                 Intent(
                     reqContext,
                     TeamListAct::class.java
                 ).putExtra("selectedTournament", list.id)
             )
-
         }
-
     }
 }
