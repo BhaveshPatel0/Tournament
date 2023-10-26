@@ -20,8 +20,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mAdapterTournamentDetail: AdapterTournamentDetail
     private lateinit var database: TournamentDataBase
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -67,9 +65,5 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }.start()
-
-
-
-
     }
 }

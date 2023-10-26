@@ -37,6 +37,10 @@ RecyclerView.Adapter<AdapterSelectTeam.HolderTeamName>() {
         holder.tvTeamName1.text = list.teamName
         holder.llTeamName.setOnClickListener {
 
+            if (listOfTeamName.size==2){
+
+            }
+
         }
     }
 }
