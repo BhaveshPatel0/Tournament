@@ -19,6 +19,6 @@ interface TeamNameDAO {
     @Delete
     fun deleteTeamName (dataTeamName: DataTeamName)
 
-    @Query("SELECT * FROM DataTeamName where tournamentId=:tid ")
+    @Query("SELECT * FROM DataTeamName where tournamentId=:tid")
     fun getAllData(tid : Int): List<DataTeamName>
 }

@@ -2,12 +2,14 @@ package com.example.tournamentact.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Button
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
 import com.example.tournamentact.R
+import com.example.tournamentact.adapter.AdapterSelectTeam
 import com.example.tournamentact.adapter.AdapterTeamName
 import com.example.tournamentact.database.teamname.DataTeamName
 import com.example.tournamentact.database.teamname.TeamNameDataBase
@@ -16,13 +18,13 @@ class SelectMatchTeamAct : AppCompatActivity() {
     private lateinit var rcvSelectTeam: RecyclerView
     private lateinit var btnOk: Button
     private lateinit var database: TeamNameDataBase
-    private lateinit var mAdapterTeamName: AdapterTeamName
+    private lateinit var mAdapterSelectTeam: AdapterSelectTeam
 
     var selectTeam=0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_select_match_team)
-        selectTeam=intent.extras?.getInt("selectTeamName")!!
+        selectTeam=intent.extras?.getInt("selectedTournament")!!
         bindView()
         bindClick()
     }
@@ -34,18 +36,16 @@ class SelectMatchTeamAct : AppCompatActivity() {
                 .build()
         Thread {
             val teamList = database.TeamNameDAO().getAllData(selectTeam)
-            //Log.d(TAG, "onResume: $teamList")
+            Log.d("TAG", "bindView:$teamList")
             runOnUiThread {
-                mAdapterTeamName = AdapterTeamName(this, teamList)
-
+                mAdapterSelectTeam = AdapterSelectTeam(this,teamList)
                 rcvSelectTeam.apply {
-                    layoutManager = GridLayoutManager(this@SelectMatchTeamAct, 3)
-                    adapter = mAdapterTeamName
+                    layoutManager = GridLayoutManager(this@SelectMatchTeamAct,3)
+                    adapter = mAdapterSelectTeam
                 }
             }
         }.start()
     }
     private fun bindClick() {
-
     }
 }
